@@ -64,14 +64,21 @@ h2 {
     font-size: 3rem;
 }
 
+.hour {
+    position: relative;
+}
+.minutes {
+    position: relative;
+}
+
 .hour::after{
     content: ':';
     position: absolute;
-    left: 956px;
+    left: 102px;
 }
 
 .minutes::after {
     content: ':';
     position: absolute;
-    left: 1080px;
+    left: 102px;
 }

@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #ccc;
+}
+button {
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    opacity: 0.8;
+}
+.container {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.alert {
+    border-bottom: 2px solid #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 1rem;
+    padding: 1rem 0;
+}
+.alert > button, .console {
+    width: 10rem;
+    padding: 1rem 0;
+}
+.console {
+    align-self: center;
+}
+.consoleAndColor {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    justify-content: space-evenly;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+}
+.consoleAndColor > span {
+    height: 3rem;
+    width: 2px;
+    background: #fff;
+}
+.colorChange {
+    display: flex;
+    gap: 2rem;
+}
+.colorChange > button {
+    width: 6rem;
+}
+.sayHi {
+    padding: 1rem 0;
+    border-bottom: 2px solid #fff;
+    display: flex;
+    row-gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.sayHi > input, button {
+    padding: 0.5rem;
+}
+.sayHi > input {
+    border: none;
+    width: 20%;
+}
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+    border-bottom: 2px solid #fff;
+}
+.showDiv {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+#div {
+    background-color: rgb(177, 136, 216);
+    padding: 1rem;
+    text-align: center;
+}

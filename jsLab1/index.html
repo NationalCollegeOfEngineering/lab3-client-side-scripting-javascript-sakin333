@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <script>
+        function internalJs() {
+            alert("I am  internalJS");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+    <div class="alert">
+    <button onclick="alert('I am inline JS')">Inline JS</button>
+    <button onclick="internalJs()">Internal JS</button>
+    <button onclick="externalJs()">External JS</button>
+    </div>
+
+    <div class="consoleAndColor">
+        <button class="console" onclick="console.log('clicked button')">Check Console</button>
+        <span></span>
+        <div class="colorChange">
+        <button style="background-color: rgb(198, 150, 150);" onclick="changeColorRed()">Change color</button>
+        <button style="background-color: rgb(119, 119, 182);" onclick="changeColorBlue()">Change color</button>
+        <button onclick="resetColor()">Reset Color</button>
+        </div>
+    </div>
+
+    <div class="sayHi">
+        <label for="name">Username</label>
+        <input type="text" id="name" placeholder="Enter username" />
+        <button onclick="sayHi()">Click to say Hi</button>
+    </div>
+
+    <div class="buttons">
+        <!-- using event Listner -->
+        <button id="Dynamic">Dynamic 1(eventListner)</button>
+        <script>addDynamicEventListener();</script>
+
+        <!-- using direct call -->
+        <button onclick="dynamicEventTest()">Dynamic 2(directCall)</button>
+
+        <button onclick="deleteMessage()">Delete Message</button>
+        <button onclick="getUserInput()">Prompt</button>
+    </div>
+    <div class="showDiv">
+        <button onclick="showHideDiv()">Show or Hide Div</button><br><br>
+        <div id="div">My Div</div>
+    </div>
+    </div>
+
+    
+</body>
+
+</html>

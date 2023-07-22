@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="FormValidation.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h3 class="title">HTML Form Validation</h3>
+            <form action="#" method="get">
+                <label for="name">Username</label>
+                <input type="text" name="name" id="name" required minlength="3" maxlength="30">
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required minlength="8">
+
+                <label for="gender" style="margin-right: 2rem;">Gender</label>
+                <input type="radio" name="gender" id="male" value="male" required>Male
+                <input type="radio" name="gender" id="female" value="female" required>Female
+
+                <div class="addresss">
+                    <label for="address" style="margin-right: 2rem;">Address</label>
+                    <select name="districts" id="districts" required>
+                        <option value="">Select District</option>
+                        <option value="Kathmandu">Kathmandu</option>
+                        <option value="Lalitpur">Lalitpur</option>
+                        <option value="Bhaktapur">Bhaktapur</option>
+                    </select>
+                </div>
+
+                <button class="primary-btn" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

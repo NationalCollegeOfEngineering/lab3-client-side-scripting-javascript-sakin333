@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./districts.js"></script>
+    <link rel="stylesheet" href="FormValidation.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h3 class="title">JS Form Validation</h3>
+            <form action="#" method="get" id="myForm" onsubmit="return validate()">
+                <label for="name">Username</label><span id="nameError" class="errorMsg"></span>
+                <input type="text" name="name" id="name" oninput="validateInput('name')">
+
+                <label for="email">Email</label><span id="emailError" class="errorMsg"></span>
+                <input type="text" name="email" id="email" oninput="validateInput('email')">
+
+                <label for="password">Password</label><span id="passwordError" class="errorMsg"></span>
+                <input type="password" name="password" id="password" oninput="validateInput('password')">
+
+                <div class="genderError" id="genderError"></div>
+                <label for="gender" style="margin-right: 2rem;">Gender</label>
+                <input type="radio" name="gender" id="male" value="male" onclick="validateGender()">Male
+                <input type="radio" name="gender" id="female" value="female" onclick="validateGender()">Female
+
+                <div class="addresss">
+                <div class="addressError" id="addressError"></div>
+                <label for="address"  style="margin-right: 2rem;">Address</label>
+                <select name="districts" id="districts"  onchange="validateSelect()">
+                    <option value="">Select District</option>
+                    <option value="kathmandu">Kathmandu</option>
+                    <option value="lalitput">Lalitpur</option>
+                    <option value="bhaktapur">Bhaktapur</option>
+                </select>
+                </div>
+
+                <button class="primary-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+
+        const validate = () => {
+            let name = document.getElementById('name').value
+            let password = document.getElementById('password').value
+            let email = document.getElementById('email').value
+            let genderMale = document.getElementById('male').checked;
+            let genderFemale = document.getElementById('female').checked;
+            let selectedDistrict = document.getElementById('districts').value;
+
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            document.querySelector('#nameError').innerHTML = '';
+            document.querySelector('#passwordError').innerHTML = '';
+            document.querySelector('#emailError').innerHTML = '';
+            document.querySelector('#genderError').innerHTML = '';
+            document.querySelector('#addressError').innerHTML = '';
+
+            let hasErrors = false
+
+            if(name == '') {
+                document.querySelector('#nameError').innerHTML = '*username required'
+                document.querySelector('#name').classList.add('errorInput')
+                hasErrors = true
+            }
+            if(password == '') {
+                document.querySelector('#passwordError').innerHTML = '*password required'
+                document.querySelector('#password').classList.add('errorInput')
+                hasErrors = true
+            }else if(password.length < 8) {
+                document.querySelector('#passwordError').innerHTML = '*password should exceed 8 characters'
+                document.querySelector('#password').classList.add('errorInput')
+                hasErrors = true
+            }
+            if(email == '') {
+                document.querySelector('#emailError').innerHTML = '*email required'
+                document.querySelector('#email').classList.add('errorInput')
+                hasErrors = true
+            }else if(!emailRegex.test(email)) {
+                document.querySelector('#emailError').innerHTML = '*invalid email format';
+                hasErrors = true;
+            }
+            if (!genderMale && !genderFemale) {
+                document.querySelector('#genderError').innerHTML = '*select a gender';
+                hasErrors = true;
+            }
+
+            if (selectedDistrict == '') {
+                document.querySelector('#addressError').innerHTML = '*select a district';
+                hasErrors = true;
+            }
+            
+            return !hasErrors
+    
+        }
+
+        const validateInput = (fieldId) => {
+            removeError(fieldId);
+            validate();
+        };
+
+        const removeError = (fieldId) => {
+            document.getElementById(fieldId).classList.remove('errorInput');
+            document.querySelector(`#${fieldId}Error`).innerHTML = '';
+        };
+
+        const validateGender = () => {
+            let genderMale = document.getElementById('male').checked;
+            let genderFemale = document.getElementById('female').checked;
+            if(genderFemale || genderMale) {
+                document.querySelector('#genderError').innerHTML = '';
+            }
+        }
+
+        const validateSelect = () => {
+            let selectedDistrict = document.getElementById('districts').value;
+            console.log(selectedDistrict)
+            if(selectedDistrict !== '') {
+                document.querySelector('#addressError').innerHTML = '';
+            }else {
+                document.querySelector('#addressError').innerHTML = '*select a district';
+            }
+        }
+
+    </script>
+</body>
+</html>

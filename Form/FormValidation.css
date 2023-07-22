@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: hsl(0, 0%, 98%);
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.container {
+    height: 100vh;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container{
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1rem 3rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    margin-bottom: 1rem;
+}
+
+input {
+    width: 100%;
+    background: transparent;
+    outline: none;
+    padding: .5rem;
+    margin: .25rem 0 1rem 0;
+    border: 1px solid #000;
+}
+
+.errorInput {
+    border: 1px solid red;
+}
+
+input[type = "radio"] {
+    width: 10%;
+}
+
+select {
+    padding: .25rem;
+    margin: .25rem 0 1rem 0;
+}
+
+.primary-btn {
+    border: none;
+    padding: .5rem 1rem;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+}
+
+.errorMsg {
+    font-size:.875em;
+    color: red;
+    margin: 0 1rem;
+}
+
+.genderError, .addressError {
+    font-size:.875em;
+    color: red;
+    margin-bottom: 12px;
+}
